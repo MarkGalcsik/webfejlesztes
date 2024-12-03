@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance Fitness SE</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="javascript/jquery-3.7.1.min.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#urlap").validate({
+    rules: {
+        firstname: "required",
+        lastname: "required",
+        
+        email: {
+        required: true,
+        email: true
+        },
+        
+        password: {
+            required: true,
+            minlength: 8
+        },
+
+        password_confirm: {
+            required: true,
+            equalTo: "#password"
+        },
+
+        date: {
+            required: true,
+            date: true
+        },
+
+        nem: {
+            required: true
+        }
+
+    },
+    messages: {
+        firstname: " Írd be a keresztneved!",
+        lastname: " Írd be a vezetékneved!",
+        
+        password: {
+            required: " Add meg a jelszavad!",
+            minlength: " A jelszavad legalább 8 karakter hosszú legyen!"
+        },
+
+        password_confirm: {
+            required: " Add meg a jelszavad újra!",
+            equalTo: " A két jelszó nem egyezik!"
+        },
+
+        email: " Kérlek valós email címet adj meg!",
+
+        date: {
+            required: " Add meg a születési dátumod!",
+        },
+
+        nem: {
+            required: " Válassz nemet!"
+        }
+    },
+   });
+ });
+
+ $(document).ready(function() {
+        $("#urlap3").validate({
+    rules: {
+        jelzes: {
+            required: true,
+            minlength: 10
+        },
+
+        ertekeles: {
+            required: true
+        },
+
+        ertekeles1: {
+            required: true
+        }
+    },
+    messages: {
+        jelzes: {
+            required: " Kérlek írd le a véleményed!",
+            minlength: " A véleményed legalább 10 karakter hosszú legyen!"
+        },
+
+        ertekeles: {
+            required: " Kérlek adj meg egy értékelést!"
+        },
+
+        ertekeles1: {
+            required: " Kérlek adj meg egy értékelést!"
+        },
+    },
+    });
+});
+    </script>
+    <style>
+        label.error {
+            color: rgb(243, 41, 41);
+            font-size: 60%;
+            margin: 5px;
+        }
+        
+    </style>
+</head>
+
+<body class="belepes-body">
+    <div class="flex-container">
+        <!--HEADER-->
+        <header>
+            <p class="main"><a href="index.html">Dance Fitness SE</a></p>
+            <div class="lista">
+                <ul>
+                    <li><a href="edzesek.html">Szolgáltatásaink</a></li>
+                    <li><a href="orarend.html">Órarend</a></li>
+                    <li><a href="rolunk.html">Rólunk</a></li>
+                    <li><a href="#" class="active">Belépés</a></li>
+                </ul>
+            </div>
+            <div class="menu-gomb">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
+                    <path
+                        d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z">
+                    </path>
+                </svg>
+            </div>
+        </header>
+        <nav class="gep-menu">
+            <ul>
+                <li><a href="edzesek.html">Szolgáltatásaink</a></li>
+                <li><a href="orarend.html">Órarend</a></li>
+                <li><a href="rolunk.html">Rólunk</a></li>
+                <li><a href="#" class="active">Belépés</a></li>
+            </ul>
+        </nav>
+    <!--ARTICLE-->
+        <article class="belepes-article">
+            <p class="belepes-cim">Regisztáljon óráinkra</p>
+            <div class="belepes-lap">
+                <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="urlap" novalidate>
+                    <p>
+                        <label for="firstname">Keresztnév </label>
+                        <input type="text" name="firstname" id="firstname" placeholder="Whinch">
+                    </p>
+                    <p>
+                        <label for="lastname">Vezetéknév</label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Eszter">
+                    </p>
+                    <p>
+                        <label for="email">Email cím </label>
+                        <input type="text" name="email" id="email" placeholder="example@gmail.com">
+                    </p>
+                    <p>
+                        <label for="password">Jelszó </label>
+                        <input type="password" name="password" id="password">
+                    </p>
+                    <p>
+                        <label for="password">Jelszó megerősítése</label>
+                        <input type="password" name="password_confirm" id="password_confirm">
+                    </p>
+                    <p>
+                        <label for="date">Születési idő:</label><br>
+                        <input type="date" id="date" name="date" class="profil-input"><br>
+                    </p>
+                    <p>
+                        <p>Nem:</p>
+                        <div class="nem">
+                            <input type="radio" id="ferfi" name="nem" value="ferfi">
+                            <label for="ferfi">Férfi</label>
+                            <input type="radio" id="no" name="nem" value="no">
+                            <label for="no">Nő</label><br>
+                        </div>
+                    </p>
+                    
+                    <input type="submit" value="Regisztáció" class="regiszt">
+                </form>
+                <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="urlap2" novalidate>
+
+                    <p class="berlet-cim">Bérletek:</p>
+                    <ul class="arak">
+                        <li>1 alkalom: 2.000 Ft</li>
+                        <li>10 alkalom: 18.000 Ft</li>
+                        <li>20 alkalom: 34.000 Ft</li>
+                        <li>6 hónapos: 78.000 Ft</li>
+                        <li>Éves: 140.000 Ft</li>
+                    </ul>
+
+
+                    <p class="berlet-sub">Foglalja le bérleteit most, majd soron kívül vegye át a recepción!</p>
+                    <p class="berlet-sub">Felnőtt órák</p>
+                    <div class="berletek">
+                        <label><input type="radio" name="alak" value="2000" id="alak-1">1 alkalmas</label><br>
+                        <label><input type="radio" name="alak" value="18000" id="alak-10">10 alkalmas</label><br>
+                        <label><input type="radio" name="alak" value="34000" id="alak-20">20 alkalmas</label><br>
+                        <label><input type="radio" name="alak" value="78000" id="alak-6">6 Hónapos</label><br>
+                        <label><input type="radio" name="alak" value="140000" id="alak-eves">Éves</label><br>
+                    </div>
+
+                    <p class="berlet-sub">Köredzés</p>
+                    <div class="berletek">
+                        <label><input type="radio" name="kor" value="2000" id="kor-1">1 alkalmas</label><br>
+                        <label><input type="radio" name="kor" value="18000" id="kor-10">10 alkalmas</label><br>
+                        <label><input type="radio" name="kor" value="34000" id="kor-20">20 alkalmas</label><br>
+                        <label><input type="radio" name="kor" value="78000" id="kor-6">6 Hónapos</label><br>
+                        <label><input type="radio" name="kor" value="140000" id="kor-eves">Éves</label><br>
+                    </div>
+
+                    <input type="text" name="total" id="total" class="total"></input>
+
+                    <input type="submit" value="Foglalás" class="regiszt">
+                </form>
+
+                <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="urlap3" novalidate>
+                    <p class="berlet-cim">Vélemény:</p>
+
+                    <label for="jelzes" class="berlet-sub">Írja le önnek mit jelent a Dance Fitness SE:</label><br>
+                    <textarea id="jelzes" name="jelzes" placeholder="Mi a véleménye az egyesület edzéseiről?..."
+                         class="textarea" rows="5" cols="20"></textarea><br>
+                    
+                    <p class="berlet-sub">Mennyire elégedett az edzőkkel?</p><br>
+                        <label>
+                            <input type="radio" id="1" name="ertekeles" value="a"> 1 - Nagyon elégedetlen<br>
+                        </label>
+                        <label>
+                            <input type="radio" id="2" name="ertekeles" value="b"> 2 - Elégedetlen<br>
+                        </label>
+                        <label>
+                            <input type="radio" id="3" name="ertekeles" value="c"> 3 - Semleges<br>
+                        </label>
+                        <label>
+                            <input type="radio" id="4" name="ertekeles" value="d"> 4 - Elégedett<br>
+                        </label>
+                        <label>
+                            <input type="radio" id="5" name="ertekeles" value="e"> 5 - Nagyon elégedett<br>
+                        </label>
+
+                    <p class="berlet-sub">Mennyire elégedett az edzőterem felszereltségével?</p><br>
+                        <label>
+                            <input type="radio" id="6" name="ertekeles1" value="f" required> 1 - Nagyon elégedetlen<br>
+                        </label>
+                        <label>
+                            <input type="radio" id="7" name="ertekeles1" value="g"> 2 - Elégedetlen<br>
+                        </label>
+                        <label>
+                            <input type="radio" id="8" name="ertekeles1" value="h"> 3 - Semleges<br>
+                        </label>
+                        <label>
+                            <input type="radio" id="9" name="ertekeles1" value="i"> 4 - Elégedett<br>
+                        </label>
+                        <label>
+                            <input type="radio" id="10" name="ertekeles1" value="ej"> 5 - Nagyon elégedett<br>
+                        </label>
+
+                    <input type="submit" value="Küldés" class="regiszt">
+                </form>
+            </div>
+        </article>
+            <!--FOOTER-->
+            <footer class="footer-belep">
+                <p>© 2024 Dance Fitness SE</p>
+                <p>Social Media:</p>
+                <div class="svg-container">
+                    <a href="https://www.facebook.com/DanceFitnessSe" target="_blank"><svg
+                            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+                            <path
+                                d="M42,11.5v25c0,3.03-2.47,5.5-5.5,5.5H31V28h3.62c0.51,0,0.94-0.38,1-0.88l0.37-3c0.04-0.28-0.05-0.57-0.24-0.78 C35.56,23.12,35.29,23,35,23h-4v-3.5c0-1.1,0.9-2,2-2h2c0.55,0,1-0.45,1-1v-3.38c0-0.51-0.4-0.94-0.91-0.99 C35.03,12.12,33.62,12,31.83,12c-4.4,0-6.83,2.62-6.83,7.37V23h-4c-0.55,0-1,0.45-1,1v3c0,0.55,0.45,1,1,1h4v14H11.5 C8.47,42,6,39.53,6,36.5v-25C6,8.47,8.47,6,11.5,6h25C39.53,6,42,8.47,42,11.5z">
+                            </path>
+                        </svg></a><br>
+                    <a href="https://www.instagram.com/dancefitnessse20/" target="_blank"><svg
+                            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 64 64">
+                            <path
+                                d="M 21.580078 7 C 13.541078 7 7 13.544938 7 21.585938 L 7 42.417969 C 7 50.457969 13.544938 57 21.585938 57 L 42.417969 57 C 50.457969 57 57 50.455062 57 42.414062 L 57 21.580078 C 57 13.541078 50.455062 7 42.414062 7 L 21.580078 7 z M 47 15 C 48.104 15 49 15.896 49 17 C 49 18.104 48.104 19 47 19 C 45.896 19 45 18.104 45 17 C 45 15.896 45.896 15 47 15 z M 32 19 C 39.17 19 45 24.83 45 32 C 45 39.17 39.169 45 32 45 C 24.83 45 19 39.169 19 32 C 19 24.831 24.83 19 32 19 z M 32 23 C 27.029 23 23 27.029 23 32 C 23 36.971 27.029 41 32 41 C 36.971 41 41 36.971 41 32 C 41 27.029 36.971 23 32 23 z">
+                            </path>
+                        </svg></a>
+                </div>
+            </footer>
+        
+        <script src="javascript/oldal.js"></script>
+        <script src="javascript/szamol.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,785 @@
+/*Main elements*/
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../Montserrat_Alternates/MontserratAlternates-Medium.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    background: #f4f3ee;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*Index.html*/ /*Főoldal*/
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex: 1 1 100%;
+}
+
+aside {
+    flex: 1 1 100%;
+}
+
+article {
+    flex: 1 1 100%;
+}
+
+.szolg {
+    flex: 1 1 100%;
+}
+
+figure {
+    flex: 1 1 100%;
+}
+
+footer {
+    flex: 1 1 100%;
+} 
+
+.gep-menu {
+    display: none;
+}
+
+/*Header*/
+header {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "main menu-gomb";
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+.main {
+    grid-area: main;
+    justify-items: left;
+    padding: 5px;
+    font-size: 2rem;
+    margin: auto 0 auto 0;
+}
+
+/*Menü*/
+.menu-gomb {
+    grid-area: menu-gomb;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f4f3ee;
+    height: 50vh;
+    width: 100%;
+    position: fixed;
+    top: -800px;
+    transition: top 0.3s ease-in-out;
+    z-index: 1;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+}
+
+.lista ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.lista ul li {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #838383;
+}
+
+.lista.aktiv {
+    top: 0;
+    margin-top: 64px;
+}
+
+header.lista ul li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.lista ul li a:hover {
+    color: #f58220;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+a.active {
+    border-radius: 10px;
+    border: none;
+    background: #f58220;
+    color: white;
+    padding: 5px;
+}
+
+.lista ul li a.active:hover {
+    color: black;
+    text-decoration: none;
+    transform: none;
+}
+/* Main Slider */
+.szolg {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.slider {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+}
+
+.slick-slide {
+    margin: 0px;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.slcik-prev {
+    position: none;
+    display: none;
+}
+
+/*Main slider szövege*/
+.szoveg-slider {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f4f3ee;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: #464646 1px 1px 1px;
+}
+
+.szoveg-slider2 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: #e9ecef 1px 1px;
+}
+
+.slider-gomb {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider-gomb a {
+    text-decoration: none;
+    background-color: rgb(0, 0, 0);
+    color: #f4f3ee;
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.slider-gomb a:hover {
+    transition: 0.4s ease-in-out;
+    transform: scale(1.1);
+}
+
+/*Article*/
+/* Üdvözöljük */
+.udv-cim {
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 20px;
+}
+
+.udv-tartalom {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.gomb {
+    padding: 10px;
+    margin: 50px 0 50px 0;
+}
+
+.gomb a {
+    text-decoration: none;
+    color:white;
+    background: black;
+    display: block;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    padding: 10px;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+
+.gomb a:hover {
+    background-color: #f4f3ee;
+    color: black;
+    transition: 0.4s ease-in-out;
+    transform: scale(1.1);
+}
+
+/* Rólunk */
+.rolunk-cim {
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 40px;
+    margin: 0;
+}
+
+.rolunk-tartalom {
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 40px;
+    margin: 0 20px 0 20px;
+}
+
+.varunk {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/*Figure*/
+figure {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+figure img {
+    width: 50%;
+}
+
+/*Footer*/
+footer {
+    text-align: center;
+    background: white;
+}
+
+.svg-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline;
+    padding: 10px;
+}
+
+/*Rólunk.html*/ /*Rólunk oldal*/
+/*Article*/
+/* Kép */
+.cim-rolunk {
+    text-align: start;
+    font-size: 1.8rem;
+    padding: 40px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.subcim {
+    text-align: start;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.subcim2 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.tartalom-rolunk {
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 40px;
+    margin: 0 20px 0 20px;
+}
+
+p.csatl {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.tartalom-eler {
+    text-align: center;
+    margin: auto;
+}
+
+.eler-container map {
+    margin: auto;
+}
+
+/*Elérhetőségek*/
+.eler-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tartalom-eler {
+    font-size: 1.2rem;
+    line-height: 40px;
+    margin: 0 20px 0 20px;
+    list-style-type: none;
+
+}
+
+/*Edzesek.html*/ 
+/* Edzések oldal */
+/*Main kép*/
+.main-kep {
+    position: relative;
+}
+
+/*Szolgáltatások*/
+div.szolg2 section img {
+    width: 100%;
+}
+
+div.lap1, div.lap2, div.lap3, div.lap4 {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+div.lap-fejlec {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*plussz/mínusz gomb*/
+.ora-gomb, .ora-gomb2, .ora-gomb3, .ora-gomb4 {
+    cursor: pointer;
+    background: white;
+    border: none;
+}
+
+button svg.minus, button svg.minus2, button svg.minus3, button svg.minus4 {
+    display: none;
+}
+
+button svg.minus.aktiv-edzes, button svg.minus2.aktiv-edzes2, button svg.minus3.aktiv-edzes3, button svg.minus4.aktiv-edzes4 {
+    display: block;
+}
+
+button svg.plus.inaktiv, button svg.plus2.inaktiv2, button svg.plus3.inaktiv3, button svg.plus4.inaktiv4 {
+    display: none;
+}
+
+/*orák tartalma*/
+.orak-tartalom, .orak-tartalom2, .orak-tartalom3, .orak-tartalom4 {
+    display: none;
+}
+
+.orak-tartalom.aktiv-edzes, .orak-tartalom2.aktiv-edzes2, .orak-tartalom3.aktiv-edzes3, .orak-tartalom4.aktiv-edzes4 {
+    display: block;
+}
+
+.orak-cim {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.orak-leiras {
+    text-align: justify;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+div.lap1 p, div.lap2 p, div.lap3 p, div.lap4 p {
+    padding: 10px 20px;
+}
+
+.edzesek-cim {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+  }
+
+.main-kep img {
+    width: 100%;
+    height: auto;
+}
+
+/*Orarend.html*/ /*Órarend oldal*/
+.main-cim-orarend {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+
+.orarend table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+
+.terem {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: #3a0ca3;
+    color: white;
+}
+
+td {
+    width: 110px;
+    height: 130px;
+}
+
+.zarva {
+    background-color: #adb5bd;
+    color: #c1121f;
+}
+
+.orak {
+    color: #1e6091;
+    background: #e9ecef;
+}
+
+/*Belep.html*/ /*Bejelentkezés oldal*/
+.belepes-article {
+    background: rgb(253,187,45);
+    background: linear-gradient(320deg, rgba(253,187,45,1) 0%, rgba(30,96,145,1) 75%);
+}
+
+.nem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.berletek {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+.berletek input {
+    display: block;
+    padding: 5px;
+    width: 10px;
+}
+
+.belepes-cim {
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 40px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.berlet-cim {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.berlet-sub {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+
+#urlap, #urlap2, #urlap3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-radius: 30px;
+    width: 80%;
+    margin: 0 auto 20px auto;
+    box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+#urlap input, #urlap2 input, #urlap3 input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #d1d1d4;
+}
+
+
+.regiszt {
+    border-radius: 10px;
+    background: #f58220;
+    color: white;
+}
+
+.regiszt:hover {
+    border-radius: 10px;
+    background: white;
+    color: #f58220;
+    cursor: pointer;
+}
+
+/*Media query*/
+@media screen and (min-width: 600px){
+    .szolg-lapok {
+        width: 60%;
+        margin: 20px auto;
+    }
+
+    .lap1, .lap2, .lap3, .lap4 {
+        display: block;
+        margin-bottom: 10%;
+        border-radius: 30px;
+    }
+
+    .szolg-lapok img {
+        margin: auto;
+        display: block;
+        border-radius: 0 0 25px 25px;
+    }
+
+    .ora-gomb, .ora-gomb2, .ora-gomb3, .ora-gomb4 {
+        border-radius: 30px;
+    }
+
+    /*Rólunk.html*/ /*Rólunk oldal*/
+    .rolunk {
+        width: 60%;
+        margin: 20px auto;
+    }
+
+    .rolunk-container {
+        display: block;
+        border-radius: 30px;
+        margin-bottom: 10%;
+    }
+
+
+    /*Belépés*/
+    .beleps-lap {
+        width: 80%;
+        margin: auto;
+    }
+
+    .berletek {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 60%;
+    }
+    
+}
+    
+@media screen and (min-width: 768px){
+    /*Index.html*/ /*Főoldal*/
+    /*Flex container*/
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    header {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    article {
+        flex: 1 1 50%;
+        float: left;
+        width: 60%;
+    }
+
+    .szoveg-slider, .szoveg-slider2 {
+        top: 40%;
+        font-size: 3rem;
+    }
+
+    .szolg img {
+        width: 100%;
+        height: 80vh;
+    }
+
+    nav {
+        flex: 1 1 100%;
+    }
+
+    figure {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: row;
+        float: right;
+        align-items: center;
+        justify-content: center;
+    }
+
+    figure img {
+        width: 50%;
+        height: 50%;
+        padding: 5px;
+
+    }
+
+    footer {
+        flex: 1 1 100%;
+    }
+    
+    /*Edzekes.html*/ 
+    /*Edzések oldal*/
+    /*Header*/
+    /*Menü*/
+    nav.gep-menu {
+        display: block;
+    }
+
+    nav.gep-menu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+
+    nav.gep-menu ul li {
+        padding: 30px;
+        font-size: 1.1rem;
+    }
+
+    nav.gep-menu ul li a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+    }
+
+    .gep-menu ul li a:hover {
+        color: #f58220;
+        transform: scale(1.1);
+        text-decoration: underline;
+    }
+
+    .menu-gomb {
+        display: none;
+    }
+
+    .lista {
+        display: none;
+    }
+
+    a.active {
+        border-radius: 10px;
+        border: none;
+        background: #f58220;
+        color: white;
+    }
+
+    .gep-menu ul li a.active:hover {
+        color: black;
+        text-decoration: none;
+        transform: none;
+    }
+
+    /*Órarend*/
+    .orarend th, .orarend td {
+        width: 10%;
+        height: 80px;
+    }
+
+    /*Belépés*/
+    #urlap, #urlap2, #urlap3 {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .orarend table {
+        display:table;
+        width: 90%; 
+        max-width: 100%;
+        margin: auto;
+    }
+}
