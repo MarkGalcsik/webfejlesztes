@@ -1,0 +1,19 @@
+Oldal Készítője: Galcsik Márk
+
+Github link:
+
+Odal témája:
+A Dance Fitness SE oldalát készítettem el, ami a családom fitnessel, táncoktatással és versenyeztetéssel foglalkozik. 
+
+JavaScript kód:
+Minden oldalon található a hamburger menü. Az alábbi liken található youtube videón látható kód alapján készült. (https://www.youtube.com/watch?v=aNDqzlAKmZc). Ez a kód a querySelector metódust használja. CSS szelektor alapján választja ki az első ilyen elemet. A gombot és a listát eltároljuk egy változóban. Az addEventListenerrel hozzáadjuk, hogy ha rákkantintunk a gombra, akkor a lista.classList tuladjonsággal hozzáférünk a lista tulajdonságaihoz. A toggle-el pedig ki-bekapcsoljuk az aktiv osztályt.
+
+A szolgáltatások (edzesek.html),(edzesek.js) oldalon található kiynitható és bezárható szöveg. Ugyanarra a módszerre épül, mint a hamburger menü. querySelector használja. Eltárolom a gombot, a plussz és mínusz ikont és a tartalmat külön, külön változókba. Majd a kattintásra láthatósága változik. A plussz ikon pedig cserélődik a mínusz gombbal, ugyanúgy a láthatóság változtatásával.  
+
+Jquery slider: A főoldalon látható (index.html) (slider2.js). A teljes kijelzőt kitölti egy kép, nincsenek nyilak sem gombok. Automaitkusan változik a kép, fadelve. 
+
+Jquery validálás: A belepes.html oldalon található. Validálja a belépési adatok meglétét és formai helyességét. A jelszó megerősítést az equalTo parancsal oldottam meg.
+
+Google font:
+A Montsterrat Alternates Medium fontot használtam az össszes oldalon.
+https://fonts.google.com/specimen/Montserrat+Alternates
