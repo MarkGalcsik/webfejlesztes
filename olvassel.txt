@@ -1,6 +1,8 @@
 Oldal Készítője: Galcsik Márk
 
-Github link:
+Github link: https://markgalcsik.github.io/webfejlesztes/index.html
+
+(https://github.com/MarkGalcsik/webfejlesztes)
 
 Odal témája:
 A Dance Fitness SE oldalát készítettem el, ami a családom fitnessel, táncoktatással és versenyeztetéssel foglalkozik. 
@@ -17,3 +19,11 @@ Jquery validálás: A belepes.html oldalon található. Validálja a belépési 
 Google font:
 A Montsterrat Alternates Medium fontot használtam az össszes oldalon.
 https://fonts.google.com/specimen/Montserrat+Alternates
+
+Oldal tartalma és képek forrásai:
+https://www.facebook.com/DanceFitnessSe
+https://www.instagram.com/dancefitnessse20/
+https://unsplash.com/
+https://www.pexels.com/hu-hu/
+https://icons8.com/icons/set/svg
+
