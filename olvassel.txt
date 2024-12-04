@@ -12,6 +12,8 @@ Minden oldalon található a hamburger menü. Az alábbi liken található youtu
 
 A szolgáltatások (edzesek.html),(edzesek.js) oldalon található kiynitható és bezárható szöveg. Ugyanarra a módszerre épül, mint a hamburger menü. querySelector használja. Eltárolom a gombot, a plussz és mínusz ikont és a tartalmat külön, külön változókba. Majd a kattintásra láthatósága változik. A plussz ikon pedig cserélődik a mínusz gombbal, ugyanúgy a láthatóság változtatásával.  
 
+A belepes.html oldalon a bérletek résznél a bérleteket kiválasztva kiírja, hogy a bérletek mennyibe kerülnek. A document.getElementById().checked-el megvizsgálom, hogy melyik radio gomb van bekapcsolva. Majd ha be van kapcsolva az alak változónak változtatom az értéket attól függően, hogy melyik radio gomb van bekapcsolva. Ugyanezt megcsinálom a köredzésekhez tartozó rádiókkal, majd a total változóban eltárolom az alak és a kor összegét, majd a document.getElementById('total').value-al megváltoztatom az értékét az inputnak a total értékre.
+
 Jquery slider: A főoldalon látható (index.html) (slider2.js). A teljes kijelzőt kitölti egy kép, nincsenek nyilak sem gombok. Automaitkusan változik a kép, fadelve. 
 
 Jquery validálás: A belepes.html oldalon található. Validálja a belépési adatok meglétét és formai helyességét. A jelszó megerősítést az equalTo parancsal oldottam meg.
